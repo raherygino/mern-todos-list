@@ -8,7 +8,7 @@ function NavBar() {
   return (
     <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">
+          <NavLink className="navbar-brand" to="./">
             <img
               alt=""
               src={ logo }
@@ -17,9 +17,9 @@ function NavBar() {
               className="d-inline-block align-top"
             />{' '}
             React CRUD
-          </Navbar.Brand>
+          </NavLink>
           <Nav className="me-auto">
-            <NavLink className="nav-link" to="./">Home</NavLink>
+            <NavLink className="nav-link" to="./">Home</NavLink> 
             <NavLink className="nav-link" to="./create">Create</NavLink>
           </Nav>
         </Container>

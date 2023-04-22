@@ -34,7 +34,7 @@ class Todo extends Component {
   render() {
     let { todos } = this.state;
     return (
-      <div>
+      <div className="bg-white">
         <h1>My Todo(s)</h1>
         <Input getTodos={this.getTodos} />
         <ListTodo todos={todos} deleteTodo={this.deleteTodo} />

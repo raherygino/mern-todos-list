@@ -1,11 +1,12 @@
 import React from 'react';
-import Todo from './components/Todo';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/ui/NavBar';
+
 const App = () => {
   return (
-    <div className="App">
-      <Todo />
-    </div>
+    <>
+      <NavBar />
+    </>
   );
 };
 export default App;

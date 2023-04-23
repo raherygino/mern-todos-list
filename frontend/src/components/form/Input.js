@@ -11,6 +11,8 @@ function Input(props) {
                     className='mb-2'
                     type={props.type}
                     name={props.id}
+                    value={props.value}
+                    onChange={props.onChange}
                     placeholder={props.label}/>
                 <label htmlFor={props.id}>{props.label}</label>
             </Form.Floating> :
@@ -19,7 +21,11 @@ function Input(props) {
                 controlId={props.id}
                 label={props.label}
                 className="mb-2" >
-                <Form.Control as={props.type} placeholder={props.label}/>
+                <Form.Control 
+                    as={props.type}
+                    value={props.value}
+                    onChange={props.onChange}
+                    placeholder={props.label}/>
             </FloatingLabel>
         }
      </>

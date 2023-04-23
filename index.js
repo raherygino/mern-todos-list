@@ -31,14 +31,23 @@ router.get('/todos', (req, res, next) => {
 });
 
 router.post('/todos', (req, res, next) => {
-  if (req.body.action) {
+  var isValidate = true;
+  const allField = Object.keys(req.body);
+
+  for (var i = 0; i < allField.length; i++) {
+      if(!req.body[allField[i]]) {
+        isValidate = false;
+      }
+  }
+
+  if (isValidate) {
     Todo.create(req.body)
       .then((data) => res.json(data))
       .catch(next);
   } else {
     res.json({
-      error: 'The input field is empty',
-    });
+      error: "Field require"
+    })
   }
 });
 

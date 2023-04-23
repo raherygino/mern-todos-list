@@ -1,12 +1,27 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// Create schema for todo
+
 const TodoSchema = new Schema({
-  action: {
-    type: String,
-    required: [true, 'The todo text field is required'],
-  },
+    title: {
+        type: String,
+        required: [true, 'The todo text field is required'],
+    },
+    type: {
+        type: String,
+        required: [true, 'Empty']
+    }, 
+    priority: {
+        type: String,
+        required: [true, 'Empty']
+    },
+    description: {
+        type: String,
+        required: [true, 'Empty']
+    },
+    created_at: {
+        type: String
+    }
 });
-// Create model for todo
+//Create model for todo
 const Todo = mongoose.model('todo', TodoSchema);
 module.exports = Todo;

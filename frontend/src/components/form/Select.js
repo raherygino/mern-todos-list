@@ -8,7 +8,10 @@ function Select(props) {
             controlId={ props.id } 
             label={ props.label }
             className='mb-2'>
-            <Form.Select aria-label="Floating label select">
+            <Form.Select 
+                aria-label={ props.label }
+                onChange={ props.onChange }
+                value={ props.value }>
                 <option>-</option>
                 { props.data.map((item, index) => (
                     <option 

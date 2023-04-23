@@ -6,7 +6,7 @@ const ListTodo = ({ todos, deleteTodo }) => {
         todos.map((todo) => {
           return (
             <li key={todo._id} onClick={() => deleteTodo(todo._id)}>
-              {todo.action}
+              {todo.title}
             </li>
           );
         })

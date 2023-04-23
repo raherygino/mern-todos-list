@@ -35,7 +35,8 @@ const Show = () => {
                         id="type"
                         label="Type"
                         type="text"
-                        value={todo.type}/>
+                        value={todo.type}
+                        readOnly/>
                 </Col>
                 <Col lg={4}>
                     <Input

@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 
 router.get('/todos', (req, res, next) => {
     // This will return all the data, exposing only the id and action field to the client
-    Todo.find({}, 'action')
+    Todo.find({})
       .then((data) => res.json(data))
       .catch(next);
 });

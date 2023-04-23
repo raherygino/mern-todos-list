@@ -57,6 +57,12 @@ router.delete('/todos/:id', (req, res, next) => {
       .catch(next);
 });
 
+router.get('/todos/show/:id', (req, res, next) => {
+  Todo.findById({ _id :  req.params.id})
+    .then((data) => res.json(data))
+    .catch(next);
+});
+
 app.use('/api', router);
 
 app.use((err, req, res, next) => {

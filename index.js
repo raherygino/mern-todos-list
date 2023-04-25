@@ -63,6 +63,28 @@ router.get('/todos/show/:id', (req, res, next) => {
     .catch(next);
 });
 
+router.put('/todos/update/:id', (req, res, next) => {
+  
+  var isValidate = true;
+  const allField = Object.keys(req.body);
+
+  for (var i = 0; i < allField.length; i++) {
+      if(!req.body[allField[i]]) {
+        isValidate = false;
+      }
+  }
+  
+  if (isValidate) {
+    Todo.findByIdAndUpdate({_id: req.params.id}, req.body, {new : true})
+      .then((data) => res.json(data))
+      .catch(next);
+  } else {
+    res.json({
+      error: "Field require"
+    })
+  }
+});
+
 app.use('/api', router);
 
 app.use((err, req, res, next) => {

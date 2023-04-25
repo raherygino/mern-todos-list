@@ -8,6 +8,7 @@ import Select from '../../components/form/Select';
 import Input from '../../components/form/Input';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom'; 
+import { PRIORITY } from '../../constants/constants';
 
 export default class Create extends Component {
     
@@ -92,8 +93,6 @@ export default class Create extends Component {
     }
 
     render() {
-        const type = ['Work','Personnal', 'Whish', 'Other'];
-        const priority = ['High','Medium', 'Low'];
         return(
             <>
             { this.state.submitted && 
@@ -114,7 +113,7 @@ export default class Create extends Component {
                                <Select 
                                    id="type"
                                    label="Type"
-                                   data={ type }
+                                   data={ TYPE }
                                    value={this.state.todo_type}
                                    onChange={this.onChangeTodoType}/>
                            </Col> 
@@ -122,7 +121,7 @@ export default class Create extends Component {
                                <Select 
                                    id="priority"
                                    label="Priority"
-                                   data={ priority }
+                                   data={ PRIORITY }
                                    value={this.state.todo_priority}
                                    onChange={this.onChangeTodoPriority}/>
                            </Col>   

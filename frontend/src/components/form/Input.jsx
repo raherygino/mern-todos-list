@@ -13,7 +13,6 @@ function Input(props) {
                     name={props.id}
                     value={props.value}
                     onChange={props.onChange}
-                    readOnly={props.readOnly}
                     placeholder={props.label}/>
                 <label htmlFor={props.id}>{props.label}</label>
             </Form.Floating> :

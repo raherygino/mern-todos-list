@@ -4,7 +4,7 @@ import { NavLink, useParams } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import Input from "../../components/form/Input";
+import PropsTodo from "./propsTodo";
 
 
 const Show = () => {
@@ -19,41 +19,33 @@ const Show = () => {
 
     return(
      <>
-        <Card.Header className="text-dark">Create</Card.Header>
+        <Card.Header className="text-dark">{ todo.title }</Card.Header>
         <Card.Body>
             <Row className='mb-2'>
-                <Col lg={4}>
-                    <Input
-                        id="title"
-                        label="Titre"
-                        type="text"
-                        value={todo.title}
-                        readOnly/>
+                <Col lg={6}>
+                    <PropsTodo 
+                        label='Title' 
+                        value={ todo.title } />
                 </Col>
-                <Col lg={4}>
-                    <Input
-                        id="type"
-                        label="Type"
-                        type="text"
-                        value={todo.type}
-                        readOnly/>
-                </Col>
-                <Col lg={4}>
-                    <Input
-                        id="priority"
-                        label="Priority"
-                        type="text"
-                        value={todo.priority}
-                        readOnly/>
+                <Col lg={6}>
+                    <PropsTodo 
+                        label='Type' 
+                        value={ todo.type } />
                 </Col>
             </Row>
-            
-            <Input
-                id="description"
-                label="Description"
-                type="text"
-                value={todo.description}
-                readOnly/>
+
+            <Row>
+                <Col lg={6}>
+                    <PropsTodo 
+                        label='Priority' 
+                        value={ todo.priority } />
+                </Col>
+                <Col lg={6}>
+                    <PropsTodo 
+                        label='Description' 
+                        value={ todo.description } />
+                </Col>
+            </Row>
             
             <NavLink 
                 className="btn btn-outline-secondary" 
@@ -64,5 +56,4 @@ const Show = () => {
      </>
     );
 }
-
 export default Show;
